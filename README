@@ -1,1 +1,26 @@
-AAAA
+30/07/2013
+rails new qm
+--
+Añado a Gemfile
+gem 'pg'
+
+gem "will_paginate"
+--
+Cambio config/database.yml
+--
+Instalo postgresql 9.2.4 y pgadmin3-1.16.1
+--
+Añado a Gemfile para gestión de users y como uso rails4:
+gem 'devise', '3.0.0.rc'
+--
+rails generate devise:install
+--
+Añado a \config\environments
+config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+--
+rails generate devise User
+
+a–adir en models/user.rb
+  attr_accessible :email, :password, :password_confirmation
+
+rake db:migrate
